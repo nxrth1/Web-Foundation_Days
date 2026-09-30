@@ -1,0 +1,99 @@
+<h1>QuickNotes</h1>
+<h2>Today's Notes</h2>
+<p>This is a paragraph of text.</p>
+<p>This is <strong>very important</strong> and this is <em>emphasised</em>.</p>
+<p>Line one<br />Line two (br = line break)</p>
+
+<ul>
+  <li>Buy milk</li>
+  <li>Call Grace</li>
+</ul>
+
+<ol>
+  <li>Open VS Code</li>
+  <li>Create index.html</li>
+  <li>Open with Live Server</li>
+</ol>
+
+<!-- 
+
+<!DOCTYPE html> tells the browser "this is a modern HTML5 document". Without it, browsers switch to an old compatibility mode.
+
+<html lang="en"> is the root element that wraps everything. The lang attribute tells screen readers and search engines which language the page is in.
+
+<head> holds information about the page. Nothing inside it appears on the page itself.
+
+<meta charset="UTF-8"> lets the page show every character correctly, including accents and emojis.
+
+<meta name="viewport" ...> makes the page display at the right size on phones. It is essential for responsive design.
+
+<title> sets the text shown on the browser tab, in bookmarks and in search results.
+
+<body> contains everything the user actually sees.
+
+
+
+A <div> is a generic box with no meaning. Semantic elements describe what their content is. 
+They look the same as a div by default, but they help screen readers (used by blind users), 
+search engines and other developers understand the page.
+The most common semantic elements are:
+
+<header> - the introductory area of a page or section, usually holding the logo, site title or tagline.
+<nav> - a block of navigation links, such as the main menu.
+<main> - the main, unique content of the page. Use only one per page.
+<section> - a themed group of content, usually with its own heading, such as "Add a note" or "Your notes".
+<article> - self-contained content that makes sense on its own, such as a blog post or a single note card.
+<aside> - side content that is related but not essential, such as tips or a sidebar.
+<footer> - the closing area of a page or section, usually holding copyright and contact links.
+-->
+
+<form id="note-form">
+  <label for="note-input">New note</label>
+  <input
+    type="text"
+    id="note-input"
+    name="note"
+    placeholder="What do you want to remember?"
+    required
+  />
+  <button type="submit">Add Note</button>
+</form>
+
+<div class="note-card">
+  <p>Meeting at <span class="highlight">3 pm</span> tomorrow.</p>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Shortcut</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Enter</td>
+      <td>Add the note</td>
+    </tr>
+    <tr>
+      <td>Ctrl + S</td>
+      <td>Save the file in VS Code</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required />
+ 
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="4"></textarea>
+ 
+<label for="topic">Topic</label>
+<select id="topic" name="topic">
+  <option value="bug">Report a bug</option>
+  <option value="idea">Suggest an idea</option>
+</select>
+
+<video src="intro.mp4" controls width="480"></video>
+<audio src="notification.mp3" controls></audio>
