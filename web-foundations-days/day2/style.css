@@ -60,6 +60,14 @@ nav a:hover {
   border-radius: 5px;
 }
 
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 section {
   margin-bottom: 20px;
   padding: 20px;
@@ -77,12 +85,14 @@ section {
 }
 
 
-.features-list li {
-  background-color: #f4f4f4;
-  padding: 10px;
-  border-radius: 5px;
-  text-align: center;
+.features-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  list-style-type: none;
 }
+
 
 table {
   width: 100%;
@@ -96,7 +106,11 @@ th, td {
   text-align: left;
 }   
 
-input[type="text"], textarea {
+.form-group {
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], textarea {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
