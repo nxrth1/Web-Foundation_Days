@@ -12,6 +12,46 @@ function searchNotes(word) {
   });
 }
 
-console.log(searchNotes("milk"));
+function longestNote() {
+  if (notes.length === 0) {
+    return null;
+  }
 
-console.log(searchNotes("pizza"));
+  let longest = notes[0];
+
+  for (let i = 1; i < notes.length; i++) {
+    if (notes[i].text.length > longest.text.length) {
+      longest = notes[i];
+    }
+  }
+
+  return longest;
+}
+
+function countByCategory() {
+  let counts = {};
+
+  for (let note of notes) {
+    if (counts[note.category]) {
+      counts[note.category]++;
+    } else {
+      counts[note.category] = 1;
+    }
+  }
+
+  return counts;
+}
+
+function getSummary() {
+  let counts = countByCategory();
+  let noteWord = notes.length === 1 ? "note" : "notes";
+
+  return `${notes.length} ${noteWord}: ${counts.personal || 0} personal, ${counts.work || 0} work, ${counts.study || 0} study.`;
+}
+
+console.log(countByCategory());
+console.log(longestNote());
+console.log(getSummary());
+notes = [];
+console.log(countByCategory());
+console.log(longestNote());
