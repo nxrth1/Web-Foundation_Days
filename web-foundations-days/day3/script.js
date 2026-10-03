@@ -22,17 +22,30 @@ function isDuplicate(text) {
 
 function addNote(text, category) {
   if (typeof text !== "string") {
+    console.log("Cannot add note: text must be a string."); // Expected output: Cannot add note: text must be a string.
     return false;
   }
 
   const trimmedText = text.trim();
   const validCategories = ["personal", "work", "study"];
 
-  if (
-    trimmedText.length === 0 ||
-    !validCategories.includes(category) ||
-    isDuplicate(trimmedText)
-  ) {
+  if (trimmedText.length === 0) {
+    console.log("Cannot add note: text cannot be empty."); // Expected output: Cannot add note: text cannot be empty.
+    return false;
+  }
+
+  if (trimmedText.length > 200) {
+    console.log("Cannot add note: text cannot exceed 200 characters."); // Expected output: Cannot add note: text cannot exceed 200 characters.
+    return false;
+  }
+
+  if (!validCategories.includes(category)) {
+    console.log("Cannot add note: category must be personal, work, or study."); // Expected output: Cannot add note: category must be personal, work, or study.
+    return false;
+  }
+
+  if (isDuplicate(trimmedText)) {
+    console.log("Cannot add note: a note with this text already exists."); // Expected output: Cannot add note: a note with this text already exists.
     return false;
   }
 
@@ -88,6 +101,7 @@ console.log(addNote("Read a book", "personal"));
 console.log(addNote("A note with no text", "invalid"));
 console.log(addNote("   ", "personal"));
 console.log(addNote("  READ A BOOK ", "personal"));
+console.log(addNote("x".repeat(201), "personal"));
 console.log(searchNotes("day 3"));
 console.log(searchNotes("not found"));
 console.log(countByCategory());
